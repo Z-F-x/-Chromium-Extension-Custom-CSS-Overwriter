@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Custom CSS Overwriter",
+  "version": "1.0",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "*://www.ap.no/*",
+    "*://www.aftenposten.no/*",
+    "*://www.dagbladet.no/*",
+    "*://www.db.no/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.ap.no/*",
+        "*://www.aftenposten.no/*",
+        "*://www.dagbladet.no/*",
+        "*://www.db.no/*",
+        "*://www.vg.no/*",
+        "*://www.nrk.no/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "./images/get_started128.png"
+  }
+}
