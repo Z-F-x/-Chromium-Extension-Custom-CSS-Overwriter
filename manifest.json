@@ -29,7 +29,10 @@
         "*://www.translate.google.com/*",
         "*://translate.google.com/*",
         "*://chromewebstore.google.com/*",
-        "*://chat.openai.com/*"
+        "*://chat.openai.com/*",
+        "*://github.com/*",
+        "*://instagram.com/*",
+        "*://www.instagram.com/*"
       ],
       "js": ["content.js"]
     }
