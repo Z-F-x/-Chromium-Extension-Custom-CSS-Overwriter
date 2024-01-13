@@ -3,10 +3,32 @@
 // Example content script
 console.log("Content script for CSS Overwriter loaded");
 
-// Inject CSS
+// Inject CSS for specific selectors
 const style = document.createElement('style');
 style.textContent = `
+
+/*Universal CSS selectors:*/
+* {
+  border-color: #999999!important;
+  color: #fff6ef!important;
+}
+
+#parentDiv .p-4.overflow-y-auto {
+  background-color: #222222!important; /* Lightened color */
+}
+
+input[type="checkbox"], input[type="text"], input {
+  background-color: #666666!important;
+  color: #fff6ef!important;
+}
+
   /* Add your custom CSS here */
+
+
+
+  
+  /* VG, Dagbladet, Aftenposten: */
+
   .horizontal-scroller, html, body {
     background-color: #262729!important;
     color: #fff6ef!important;
@@ -26,26 +48,51 @@ style.textContent = `
     color: #fff6ef!important;
   }
 
-  .header, header, .carousel-see-more-livefeed, .teaser, children __sc, .block one-plus-three, .text-container, .information comments, .illustration-container, .vev, .col-2b, .article, .teaser-link, .content-outer, .content-container, .content _center, .page-main-container{
+  .article-entity, .header, header, .carousel-see-more-livefeed, .teaser, children __sc, .block one-plus-three, .text-container, .information comments, .illustration-container, .vev, .col-2b, .article, .teaser-link, .content-outer, .content-container, .content _center, .page-main-container{
     background-color: #262729!important;
     color: #fff6ef!important;
   }
   .teaser-link{
     border-bottom: 1px solid gray;
   }
-  * {
-  // background-color: #262729;
-  color: #fff6ef!important;
-}
-::before {
-  background-color: #262729!important;
-}
 
+  ::before {
+    background-color: #262729!important;
+  }
+
+
+
+  /* Etymology online: */
+  .container--1mazc{
+    background-color: #262729!important;
+    color: #fff6ef!important;
+  }
+
+  /* translate.google.com: */
+
+  /* chat.openai.com*/
+  .sticky{
+    background-color: #262729!important;
+    color: #fff6ef!important;
+  } 
+
+  .p-4 .overflow-y-auto{
+    background-color: #222222!important;
+  }
+
+  .w-full text-token-text-primary{
+    background-color: #333333!important;
+  }
+
+  .px-4, .py-2, .justify-center, .text-base, .md:gap-6, .m-auto, .flex, .flex-1, .text-base, .mx-auto, .gap-3, .md:px-5, .lg:px-1, .xl:px-5, .md:max-w-3xl, .lg:max-w-[40rem], .xl:max-w-[48rem], .group, .final-completion, .relative, .flex, .w-full, .flex-col, .lg:w-[calc(100%-115px)], .agent-turn{
+    background-color: #333333!important;
+  }
 
 `;
 
-var divs = document.querySelectorAll('div');
 
+// Targets all divs for background color overwrite
+var divs = document.querySelectorAll('div');
 // Loop through each div and change its background color
 divs.forEach(function(div) {
     div.style.backgroundColor = '#262729'; // Replace 'yourColor' with your desired color
