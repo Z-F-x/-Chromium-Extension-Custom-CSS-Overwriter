@@ -1,5 +1,4 @@
-
--Chromium-Extension-Custom-CSS-Overwriter
+Custom CSS Overwriter Extension for Chromium / Chrome based browsers.
 Simple JS that overwrites CSS of websites to dark background and white fonts (Forced Darkmode essentially).
 
 • manifest.json contains the array holding the websites that the extension are overwriting.
